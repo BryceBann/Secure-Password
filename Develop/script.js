@@ -13,7 +13,7 @@ var specialChar = false;
 const generatePassword = function(){
   var passLength = window.prompt("How many characters between 8-128")
   if(prompt <! 8){
-    document.getElementById('password')[0].placeholder = 'Not enough characters';
+    window.prompt("Not enough characters")
   }else{}
     
     
