@@ -3,6 +3,24 @@
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
+var passLength = 0;
+var lower = false;
+var upper = false;
+var numeric = false;
+var specialChar = false;
+
+
+const generatePassword = function(){
+  var passLength = window.prompt("How many characters between 8-128")
+  if(prompt <! 8){
+    document.getElementById('password')[0].placeholder = 'Not enough characters';
+  }else{}
+    
+    
+  
+
+}
+console.log(passLength)
 
 // Write password to the #password input
 function writePassword() {
