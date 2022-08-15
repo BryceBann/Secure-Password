@@ -124,10 +124,7 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
  
   
- if(lower === true){
-  perTrue = perTrue + 1; 
-  console.log(perTrue)
- }
+
 
  
   
