@@ -4,7 +4,10 @@ var lower;
 var upper;
 var special;
 var number;
-
+const numChar = ["0123456789"]
+const alpChar = ["abcdefghijklmnopqrstuvwxyz"]
+const alphUpChar = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"]
+const speChar = ["!@#$%^&*()_-+="]
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
@@ -83,10 +86,10 @@ const generatePassword = function(){
   //self check log
   console.log(number)
 
-
-
+  const passWordCriteria = [passLength, lower, upper, special, number]
+  console.log(passWordCriteria)
 }
-
+//put hard stop so generate password button keeps generating passwords with stored var data or option to generate new or change criteria
 
 
 // Write password to the #password input
@@ -94,6 +97,7 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
+  
   passwordText.value = password;
 
 }
