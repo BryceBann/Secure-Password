@@ -5,10 +5,11 @@ var upper;
 var special;
 var number;
 var perTrue = 0;
-const numChar = ["0123456789"]
-const alpChar = ["abcdefghijklmnopqrstuvwxyz"]
-const alphUpChar = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"]
-const speChar = ["!@#$%^&*()_-+="]
+const passWordCriteria = []
+const numChar = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+const alpChar = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+const alphUpChar = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+const speChar = ["!","@","#","$","%","^","&","*","(",")","_","-","+","="]
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
@@ -87,8 +88,24 @@ const generatePassword = function(){
   //self check log
   console.log(number)
 
-  const passWordCriteria = [passLength, lower, upper, special, number]
-  console.log(passWordCriteria)
+  
+ if(lower == true){
+  passWordCriteria.push("lowerCase")
+ 
+ if(upper == true){
+  passWordCriteria.push("upperCase")
+ }
+
+ if(special == true){
+  passWordCriteria.push("specialChar")
+ }
+
+ if(number == true){
+  passWordCriteria.push("numChar")
+ }
+
+ console.log(passWordCriteria)
+ }
   return
 }
 //put hard stop so generate password button keeps generating passwords with stored var data or option to generate new or change criteria
