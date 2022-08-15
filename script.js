@@ -4,6 +4,7 @@ var lower;
 var upper;
 var special;
 var number;
+var perTrue = 0;
 const numChar = ["0123456789"]
 const alpChar = ["abcdefghijklmnopqrstuvwxyz"]
 const alphUpChar = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"]
@@ -88,15 +89,32 @@ const generatePassword = function(){
 
   const passWordCriteria = [passLength, lower, upper, special, number]
   console.log(passWordCriteria)
+  return
 }
 //put hard stop so generate password button keeps generating passwords with stored var data or option to generate new or change criteria
 
 
 // Write password to the #password input
+
+//find way to turn true var into +1 on new var
+ //distrabute passLength randomly through the now true var
+ //grab random characters depending on true or false value
+ //scramble characters gathered 
+ //display final ouput 
+ 
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
+ 
+  
+ if(lower === true){
+  perTrue = perTrue + 1; 
+  console.log(perTrue)
+ }
 
+ 
+  
+ 
   
   passwordText.value = password;
 
