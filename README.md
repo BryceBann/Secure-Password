@@ -7,7 +7,10 @@
 
 ## The code set-up
 
-<p>The code is set up to ask the user critera by asking for a yes or no typed responses, which turns the input answer into a boolean true or false statment to use in later code. The true and flase values increase a variable that will be used to spread the input password lenegth randomly across the different critera, after a random seclector takes distrubited amount of characters to take and place into a empty array. With the fianl step being another function taking and placing random characters into the soon to be presented order.</p> 
+<p>The code is set up to ask the user critera by asking for a yes or no responses with confirm boxes. The true and flase values are then used to see if an array is needed to concat to an empty array, when the array is concated it combines both arrays into one and create one really long array. That is when i for loop runs through a math.random code to pull random items from the array, the then scambled and random password is generated.
 
 ## Webpage screenshot
 <img src="./Images/webpage.PNG" height=150px width=150px>
+
+## webpage link
+[link to active page](https://brycebann.github.io/Secure-Password/)
