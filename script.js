@@ -4,8 +4,7 @@ var lower;
 var upper;
 var special;
 var number;
-var perTrue = 0;
-const passWordCriteria = []
+let passWordCriteria = [];
 const numChar = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 const alpChar = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
 const alphUpChar = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
@@ -27,7 +26,6 @@ const generatePassword = function(){
   //self check function works
   console.log(passLength)
 
-  
   var lower = window.prompt("Any lowercase characters?\n(Yes or No)")
   lower = lower.toUpperCase();
   if(lower ==="YES"){
@@ -42,6 +40,7 @@ const generatePassword = function(){
   }
  //self check log
  console.log(lower)
+
 
   var upper = window.prompt("Any uppercase characters\n(Yes or No)")
   upper = upper.toUpperCase();
@@ -104,21 +103,15 @@ const generatePassword = function(){
   passWordCriteria.push("numChar")
  }
 
- console.log(passWordCriteria)
+ console.log(passWordCriteria);//array wont show full value
  }
-  return
 }
-//put hard stop so generate password button keeps generating passwords with stored var data or option to generate new or change criteria
-
-
-// Write password to the #password input
-
-//find way to turn true var into +1 on new var
- //distrabute passLength randomly through the now true var
- //grab random characters depending on true or false value
- //scramble characters gathered 
+//grab random characters depending on true or false value shoulf be figured out test more 
+ //grab random characters with for loop including passLength, no idea were to start with math.random
+ //scramble characters gathered another math.random to scamble 
  //display final ouput 
- 
+
+ // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
