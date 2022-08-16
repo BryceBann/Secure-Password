@@ -62,6 +62,11 @@ const generatePassword = function(){
   //self check log
   console.log(number)
 
+  if(lower === false && upper === false && special === false && number === false){
+    alert("What kind of password is no password")
+    generatePassword()
+  }
+
   //depending on true of false will add array to blank array 
  if(lower == true){
   passWordCriteria = passWordCriteria.concat(alpChar)
