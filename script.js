@@ -89,33 +89,42 @@ const generatePassword = function(){
 
   
  if(lower == true){
-  passWordCriteria.push("lowerCase")
+  //passWordCriteria.push(alpChar)
+  passWordCriteria = passWordCriteria.concat(alpChar)
  
  if(upper == true){
-  passWordCriteria.push("upperCase")
+  //passWordCriteria.push(alphUpChar)
+  passWordCriteria = passWordCriteria.concat(alphUpChar)
  }
 
  if(special == true){
-  passWordCriteria.push("specialChar")
+  //passWordCriteria.push(speChar)
+  passWordCriteria = passWordCriteria.concat(speChar)
  }
 
  if(number == true){
-  passWordCriteria.push("numChar")
- }
-
- console.log(passWordCriteria);//array wont show full value
- }
+  //passWordCriteria.push(numChar)
+ passWordCriteria = passWordCriteria.concat(numChar)
 }
-//grab random characters depending on true or false value shoulf be figured out test more 
- //grab random characters with for loop including passLength, no idea were to start with math.random
- //scramble characters gathered another math.random to scamble 
- //display final ouput 
+}
+console.log(passWordCriteria)// array now pulls the correct array info with concat creating a large array
+
+}
+
+//grab random characters depending on true or false value should be figured out
+// test more should work have clear solution
+//grab random characters with for loop and math.random including passLength
+//scramble characters gathered another math.random to scamble 
+//display final ouput
 
  // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
  
+  var passTest = passWordCriteria[Math.floor(Math.random()*passWordCriteria.length)];
+  console.log(passTest)
+  
   
 
 
@@ -129,3 +138,7 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+
+//passWordCriteria.splice(0,passWordCriteria.length)
+//use to clear array after password is generated
