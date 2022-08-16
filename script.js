@@ -11,7 +11,7 @@ const alphUpChar = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O",
 const speChar = ["!","@","#","$","%","^","&","*","(",")","_","-","+","="]
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
-
+//change to window.confirm to help on my side and user firendly
 const generatePassword = function(){ 
   var passLength = window.prompt("Select characters amount between 8-128.")
   if(passLength < 8){
@@ -26,114 +26,76 @@ const generatePassword = function(){
   //self check function works
   console.log(passLength)
 
-  var lower = window.prompt("Any lowercase characters?\n(Yes or No)")
-  lower = lower.toUpperCase();
-  if(lower ==="YES"){
-    window.alert("You chose: " + lower)
-    lower = true
-  }else if(lower === "NO"){
-    window.alert("You chose: " + lower)
-    lower = false
+  var lower = window.confirm("Any lowercase characters?\n(Ok = Yes or Cancel = No)")
+  if(lower){
+    window.alert("You chose: Yes")
   }else{
-    window.alert("Please check spelling")
-   //needs a return reset to top of lower for miss spelling
+    window.alert("You chose: No")
   }
  //self check log
  console.log(lower)
 
-
-  var upper = window.prompt("Any uppercase characters\n(Yes or No)")
-  upper = upper.toUpperCase();
-  if(upper === "YES"){
-    window.alert("You chose: " + upper)
-    upper = true
-  }else if(upper === "NO"){
-    window.alert("You chose: " + upper)
-    upper = false
+  var upper = window.confirm("Any uppercase characters\n(Ok = Yes or Cancel = No)")
+  if(upper){
+    window.alert("You chose: Yes")
   }else{
-    window.alert("Please check spelling.")
-    //needs return to reset to top of upper for miss spelling
+    window.alert("You chose: No")
   }
   //self check log
   console.log(upper)
 
-  var special = window.prompt("Any special characters\n(Yes or No)")
-  special = special.toUpperCase();
-  if(special === "YES"){
-    window.alert("You chose: " + special)
-    special = true
-  }else if(special === "NO"){
-    window.alert("You chose: " + special)
-    special = false
+  var special = window.confirm("Any special characters\n(Yes or No)")
+  if(special){
+    window.alert("You chose: Yes")
   }else{
-    window.alert("Please check spelling.")
-    //needs return to reset to top of special for miss spelling
+    window.alert("You chose: No")
   }
   //self check log
   console.log(special)
 
-  var number = window.prompt("Any numerical characters\n(Yes or No)")
-  number = number.toUpperCase();
-  if(number === "YES"){
-    window.alert("You chose: " + number)
-    number = true
-  }else if(number=== "NO"){
-    window.alert("You chose: " + number)
-    number = false
+  var number = window.confirm("Any numerical characters\n(Yes or No)")
+  if(number){
+    window.alert("You chose: Yes")
   }else{
-    window.alert("Please check spelling.")
-    //needs return to reset to top of number for miss spelling 
+    window.alert("You chose: No")
   }
   //self check log
   console.log(number)
 
-  
+  //depending on true of false will add array to blank array 
  if(lower == true){
-  //passWordCriteria.push(alpChar)
   passWordCriteria = passWordCriteria.concat(alpChar)
- 
+ }
  if(upper == true){
-  //passWordCriteria.push(alphUpChar)
   passWordCriteria = passWordCriteria.concat(alphUpChar)
  }
 
  if(special == true){
-  //passWordCriteria.push(speChar)
   passWordCriteria = passWordCriteria.concat(speChar)
  }
 
  if(number == true){
-  //passWordCriteria.push(numChar)
  passWordCriteria = passWordCriteria.concat(numChar)
 }
-}
-console.log(passWordCriteria)// array now pulls the correct array info with concat creating a large array
 
-}
-
-//grab random characters depending on true or false value should be figured out
-// test more should work have clear solution
 //grab random characters with for loop and math.random including passLength
-//scramble characters gathered another math.random to scamble 
-//display final ouput
+var  finalPass = "";
+console.log(passWordCriteria)
+for( i = 0; i < passLength; i++){
+  var ranPass = passWordCriteria[Math.floor(Math.random()*passWordCriteria.length)];
+  finalPass = finalPass.concat(ranPass)
+  console.log(finalPass)
+}
+return finalPass
+}
 
- // Write password to the #password input
+//display final ouput
+// Write password to the #password input
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
- 
-  var passTest = passWordCriteria[Math.floor(Math.random()*passWordCriteria.length)];
-  console.log(passTest)
-  
-  
-
-
- 
-  
- 
   
   passwordText.value = password;
-
 }
 
 // Add event listener to generate button
