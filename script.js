@@ -69,10 +69,10 @@ const generatePassword = function(){
   //depending on true of false will add array to blank array 
  if(lower == true){
  passWordCriteria.push(alpChar)
-  
 }
+
  if(upper == true){
-   passWordCriteria.push(alphUpChar)
+ passWordCriteria.push(alphUpChar)
  }
 
  if(special == true){
@@ -85,11 +85,9 @@ const generatePassword = function(){
 
 //grab random characters with for loop and math.random including passLength
 var  finalPass = "";
-console.log(passWordCriteria)
 for( i = 0; i < passLength; i++){
   var ranPass = passWordCriteria[Math.floor(Math.random()*passWordCriteria.length)];
   finalPass = finalPass.concat(ranPass)
-  console.log(finalPass)
 }
 return finalPass
 
