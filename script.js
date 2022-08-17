@@ -4,7 +4,6 @@ var lower;
 var upper;
 var special;
 var number;
-let passWordCriteria = [];
 const numChar = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 const alpChar = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
 const alphUpChar = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
@@ -66,7 +65,7 @@ const generatePassword = function(){
     alert("What kind of password is no password")
     generatePassword()
   }
-
+  var passWordCriteria = [];
   //depending on true of false will add array to blank array 
  if(lower == true){
   passWordCriteria = passWordCriteria.concat(alpChar)
@@ -87,11 +86,12 @@ const generatePassword = function(){
 var  finalPass = "";
 console.log(passWordCriteria)
 for( i = 0; i < passLength; i++){
-  var ranPass = passWordCriteria[Math.floor(Math.random()*passWordCriteria.length)];
+  var ranPass = passWordCriteria[Math.floor(Math.random()*passW.length)];
   finalPass = finalPass.concat(ranPass)
   console.log(finalPass)
 }
 return finalPass
+
 }
 
 //display final ouput
