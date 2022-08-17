@@ -68,25 +68,26 @@ const generatePassword = function(){
   var passWordCriteria = [];
   //depending on true of false will add array to blank array 
  if(lower == true){
-  passWordCriteria = passWordCriteria.concat(alpChar)
- }
+ passWordCriteria.push(alpChar)
+  
+}
  if(upper == true){
-  passWordCriteria = passWordCriteria.concat(alphUpChar)
+   passWordCriteria.push(alphUpChar)
  }
 
  if(special == true){
-  passWordCriteria = passWordCriteria.concat(speChar)
+  passWordCriteria.push(speChar)
  }
 
  if(number == true){
- passWordCriteria = passWordCriteria.concat(numChar)
+ passWordCriteria.push(numChar)
 }
 
 //grab random characters with for loop and math.random including passLength
 var  finalPass = "";
 console.log(passWordCriteria)
 for( i = 0; i < passLength; i++){
-  var ranPass = passWordCriteria[Math.floor(Math.random()*passW.length)];
+  var ranPass = passWordCriteria[Math.floor(Math.random()*passWordCriteria.length)];
   finalPass = finalPass.concat(ranPass)
   console.log(finalPass)
 }
